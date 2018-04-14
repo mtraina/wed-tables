@@ -7,6 +7,5 @@ import org.springframework.boot.runApplication
 class WebTablesApplication
 
 fun main(args: Array<String>) {
-    //runApplication<WebTablesApplication>(*args)
-    CSVReader().read()
+    runApplication<WebTablesApplication>(*args)
 }
