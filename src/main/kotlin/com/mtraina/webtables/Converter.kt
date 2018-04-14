@@ -14,5 +14,6 @@ class GuestConverter: Converter<List<String>, List<Guest>> {
     override fun convert(s: List<String>): List<Guest> {
         return s.map { s -> s.split(",") }
                 .map { t -> Guest(t.get(0), t.get(1)) }
+                .filter { g -> "yes" == g.presence }
     }
 }
