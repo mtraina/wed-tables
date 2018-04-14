@@ -5,7 +5,6 @@ import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.ServerResponse.ok
 import org.springframework.web.reactive.function.server.body
-import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 
@@ -14,6 +13,6 @@ interface GuestHandler {
 }
 
 @Component
-class GuestHandlerImpl(private val reader: Reader): GuestHandler {
-    override fun guests(req: ServerRequest) = ok().body(Flux.just(reader.read()))
+class GuestHandlerImpl(private val guestService: GuestService): GuestHandler {
+    override fun guests(req: ServerRequest) = ok().body(Mono.just(guestService.guests()))
 }
