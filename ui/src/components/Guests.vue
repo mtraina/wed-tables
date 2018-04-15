@@ -17,15 +17,17 @@ export default {
     }
   },
 
-  callRestService () {
-    axios.get(`api/guests`)
-      .then(response => {
-        // JSON responses are automatically parsed.
-        this.response = response.data
-      })
-      .catch(e => {
-        this.errors.push(e)
-      })
+  methods: {
+    callRestService () {
+      axios.get(`api/guests`)
+        .then(response => {
+          // JSON responses are automatically parsed.
+          this.response = response.data
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    }
   }
 }
 </script>
