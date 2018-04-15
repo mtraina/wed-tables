@@ -10,8 +10,7 @@ interface Reader {
 @Component
 class CSVReader : Reader {
     override fun read(): List<String> {
-        val file = File(ClassLoader.getSystemResource("guest.csv").file)
+        val file = File(ClassLoader.getSystemResource("guests.csv").file)
         return file.readLines()
-
     }
 }

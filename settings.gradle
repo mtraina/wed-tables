@@ -1,1 +1,3 @@
 rootProject.name = 'wed-tables'
+include 'server'
+

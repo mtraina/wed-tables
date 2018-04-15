@@ -1,2 +1,2 @@
 .idea
-guest.csv
+server/**/guests.csv
