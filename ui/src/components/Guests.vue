@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import {AXIOS} from '@/config/http-common'
 
 export default {
 
@@ -19,7 +19,7 @@ export default {
 
   methods: {
     callRestService () {
-      axios.get(`api/guests`)
+      AXIOS.get(`api/guests`)
         .then(response => {
           // JSON responses are automatically parsed.
           this.response = response.data
