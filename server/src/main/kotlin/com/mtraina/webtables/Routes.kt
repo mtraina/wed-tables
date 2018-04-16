@@ -6,6 +6,7 @@ import org.springframework.core.io.ClassPathResource
 import org.springframework.http.MediaType.APPLICATION_JSON
 import org.springframework.web.reactive.function.server.router
 
+
 @Configuration
 class Routes(private val guestHandler: GuestHandler) {
 
