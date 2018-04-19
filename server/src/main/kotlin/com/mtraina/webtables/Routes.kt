@@ -15,6 +15,7 @@ class Routes(private val guestHandler: GuestHandler) {
         "/api".nest {
             accept(APPLICATION_JSON).nest {
                 GET("/guests", guestHandler::guests)
+                OPTIONS("/guests", guestHandler::guests)
             }
         }
         resources("/**", ClassPathResource("static/"))
