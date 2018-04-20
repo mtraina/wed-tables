@@ -1,7 +1,17 @@
 <template>
 <div>
     <button class=”Search__button” @click="callRestService()">Get guests</button>
-    <h3>{{ response }}</h3>
+
+    <div>
+        <b-dropdown id="ddown1" text="Dropdown Button" class="m-md-2">
+            <b-dropdown-item v-for="guest in response"
+                        :key="guest.name"
+                        :value="guest.name">
+                {{guest.name}}
+            </b-dropdown-item>
+        </b-dropdown>
+    </div>
+
 </div>
 </template>
 
