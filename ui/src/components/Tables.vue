@@ -21,7 +21,7 @@
       </draggable>
     </div>
 
-     <div  class="col-md-2">
+     <div  class="col-md-2">Table 1
       <draggable element="span" v-model="list2" :options="dragOptions" :move="onMove"> 
           <transition-group name="no" class="list-group" tag="ul">
             <li class="list-group-item" v-for="element in list2" :key="element.order"> 
@@ -33,7 +33,7 @@
       </draggable>
     </div>
 
-    <div  class="col-md-2">
+    <div  class="col-md-2">Table 2
       <draggable element="span" v-model="list3" :options="dragOptions" :move="onMove"> 
           <transition-group name="no" class="list-group" tag="ul">
             <li class="list-group-item" v-for="element in list3" :key="element.order"> 
@@ -45,7 +45,7 @@
       </draggable>
     </div>
 
-    <div  class="col-md-2">
+    <div  class="col-md-2">Table 3
       <draggable element="span" v-model="list4" :options="dragOptions" :move="onMove"> 
           <transition-group name="no" class="list-group" tag="ul">
             <li class="list-group-item" v-for="element in list4" :key="element.order"> 
@@ -57,7 +57,7 @@
       </draggable>
     </div>
 
-    <div  class="col-md-2">
+    <div  class="col-md-2">Table 4
       <draggable element="span" v-model="list5" :options="dragOptions" :move="onMove"> 
           <transition-group name="no" class="list-group" tag="ul">
             <li class="list-group-item" v-for="element in list5" :key="element.order"> 
@@ -69,7 +69,7 @@
       </draggable>
     </div>
 
-    <div  class="col-md-2">
+    <div  class="col-md-2">Table 5
       <draggable element="span" v-model="list6" :options="dragOptions" :move="onMove"> 
           <transition-group name="no" class="list-group" tag="ul">
             <li class="list-group-item" v-for="element in list6" :key="element.order"> 
@@ -81,7 +81,7 @@
       </draggable>
     </div>
 
-        <div  class="col-md-2">
+        <div  class="col-md-2">Table 6
       <draggable element="span" v-model="list7" :options="dragOptions" :move="onMove"> 
           <transition-group name="no" class="list-group" tag="ul">
             <li class="list-group-item" v-for="element in list7" :key="element.order"> 
@@ -93,7 +93,7 @@
       </draggable>
     </div>
 
-        <div  class="col-md-2">
+        <div  class="col-md-2">Table 7
       <draggable element="span" v-model="list8" :options="dragOptions" :move="onMove"> 
           <transition-group name="no" class="list-group" tag="ul">
             <li class="list-group-item" v-for="element in list8" :key="element.order"> 
