@@ -2,17 +2,14 @@
   <div class="fluid container">
     <div class="form-group form-group-lg panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Sortbale control</h3>
-      </div>
-      <div class="panel-body">
+        <h3 class="panel-title">Wedding tables</h3>
         <div class = "checkbox">
           <label><input type = "checkbox" v-model="editable">Enable drag and drop</label>      
         </div>
-        <button type="button" class="btn btn-default" @click="orderList">Sort by original order</button>
       </div>
     </div>
 
-    <div  class="col-md-3">
+    <div  class="col-md-2">
         <draggable class="list-group" element="ul" v-model="list" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false"> 
           <transition-group type="transition" :name="'flip-list'">
             <li class="list-group-item" v-for="element in list" :key="element.order"> 
@@ -24,7 +21,7 @@
       </draggable>
     </div>
 
-     <div  class="col-md-3">
+     <div  class="col-md-2">
       <draggable element="span" v-model="list2" :options="dragOptions" :move="onMove"> 
           <transition-group name="no" class="list-group" tag="ul">
             <li class="list-group-item" v-for="element in list2" :key="element.order"> 
@@ -36,11 +33,23 @@
       </draggable>
     </div>
 
+    <div  class="col-md-2">
+      <draggable element="span" v-model="list3" :options="dragOptions" :move="onMove"> 
+          <transition-group name="no" class="list-group" tag="ul">
+            <li class="list-group-item" v-for="element in list3" :key="element.order"> 
+              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
+              {{element.name}}
+              <span class="badge">{{element.order}}</span>
+            </li> 
+          </transition-group>
+      </draggable>
+    </div>
 
-    <div  class="list-group col-md-3">
+
+    <div  class="list-group col-md-2">
       <pre>{{listString}}</pre>
     </div>
-     <div  class="list-group col-md-3">
+     <div  class="list-group col-md-2">
       <pre>{{list2String}}</pre>
     </div>
   </div>
@@ -50,7 +59,7 @@
 import draggable from 'vuedraggable'
 
 const message = [ 'joe', 'alice', 'bob', 'charlie', 'david', 'erika' , 'frederik', 'george' ]
-const message2 = [ 'hans', 'ivan' ]
+const message2 = []
 
 export default {
   name: 'hello',
@@ -60,7 +69,9 @@ export default {
   data () {
     return {
       list: message.map( (name,index) => {return {name, order: index+1, fixed: false}; }),
-      list2:message2.map( (name,index) => {return {name, order: index+1, fixed: false}; }),
+      list2:[],
+      list3:[],
+
       editable:true,
       isDragging: false,
       delayedDragging:false
