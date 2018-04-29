@@ -45,21 +45,83 @@
       </draggable>
     </div>
 
+    <div  class="col-md-2">
+      <draggable element="span" v-model="list4" :options="dragOptions" :move="onMove"> 
+          <transition-group name="no" class="list-group" tag="ul">
+            <li class="list-group-item" v-for="element in list4" :key="element.order"> 
+              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
+              {{element.name}}
+              <span class="badge">{{element.order}}</span>
+            </li> 
+          </transition-group>
+      </draggable>
+    </div>
 
-    <div  class="list-group col-md-2">
+    <div  class="col-md-2">
+      <draggable element="span" v-model="list5" :options="dragOptions" :move="onMove"> 
+          <transition-group name="no" class="list-group" tag="ul">
+            <li class="list-group-item" v-for="element in list5" :key="element.order"> 
+              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
+              {{element.name}}
+              <span class="badge">{{element.order}}</span>
+            </li> 
+          </transition-group>
+      </draggable>
+    </div>
+
+    <div  class="col-md-2">
+      <draggable element="span" v-model="list6" :options="dragOptions" :move="onMove"> 
+          <transition-group name="no" class="list-group" tag="ul">
+            <li class="list-group-item" v-for="element in list6" :key="element.order"> 
+              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
+              {{element.name}}
+              <span class="badge">{{element.order}}</span>
+            </li> 
+          </transition-group>
+      </draggable>
+    </div>
+
+        <div  class="col-md-2">
+      <draggable element="span" v-model="list7" :options="dragOptions" :move="onMove"> 
+          <transition-group name="no" class="list-group" tag="ul">
+            <li class="list-group-item" v-for="element in list7" :key="element.order"> 
+              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
+              {{element.name}}
+              <span class="badge">{{element.order}}</span>
+            </li> 
+          </transition-group>
+      </draggable>
+    </div>
+
+        <div  class="col-md-2">
+      <draggable element="span" v-model="list8" :options="dragOptions" :move="onMove"> 
+          <transition-group name="no" class="list-group" tag="ul">
+            <li class="list-group-item" v-for="element in list8" :key="element.order"> 
+              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
+              {{element.name}}
+              <span class="badge">{{element.order}}</span>
+            </li> 
+          </transition-group>
+      </draggable>
+    </div>
+
+
+    <!-- <div  class="list-group col-md-2">
       <pre>{{listString}}</pre>
     </div>
      <div  class="list-group col-md-2">
       <pre>{{list2String}}</pre>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import draggable from 'vuedraggable'
 
-const message = [ 'joe', 'alice', 'bob', 'charlie', 'david', 'erika' , 'frederik', 'george' ]
-const message2 = []
+const message = [ 'joe', 'alice', 'bob', 'charlie', 'david', 'erika' , 'frederik', 'george', 
+'joe', 'alice', 'bob', 'charlie', 'david', 'erika' , 'frederik', 'george',
+'joe', 'alice', 'bob', 'charlie', 'david', 'erika' , 'frederik', 'george',
+'joe', 'alice', 'bob', 'charlie', 'david', 'erika' , 'frederik', 'george' ]
 
 export default {
   name: 'hello',
@@ -71,6 +133,11 @@ export default {
       list: message.map( (name,index) => {return {name, order: index+1, fixed: false}; }),
       list2:[],
       list3:[],
+      list4:[],
+      list5:[],
+      list6:[],
+      list7:[],
+      list8:[],
 
       editable:true,
       isDragging: false,
