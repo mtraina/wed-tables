@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Guests from '@/components/Guests'
 import Tables from '@/components/Tables'
 
@@ -17,11 +16,6 @@ export default new Router({
       path: '/tables',
       name: 'Tables',
       component: Tables
-    },
-    {
-      path: '/hello',
-      name: 'HelloWorld',
-      component: HelloWorld
     }
   ]
 })
