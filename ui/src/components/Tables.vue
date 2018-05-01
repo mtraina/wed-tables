@@ -193,7 +193,7 @@
 import draggable from 'vuedraggable'
 //import Table from './Table'
 
-import guests from '../../static/guests.json'
+import guests from '../../data/guests.json'
 //console.log(guests);
 
 export default {
