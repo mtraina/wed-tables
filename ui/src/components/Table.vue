@@ -17,7 +17,6 @@ import draggable from 'vuedraggable'
 import { EventBus } from './event-bus.js'
 
 export default {
-  name: 'CustomTable',
   props: {
     tableId: String,
     title: String

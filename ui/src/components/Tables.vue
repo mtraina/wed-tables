@@ -22,199 +22,22 @@
       </draggable>
     </div>
 
-    <CustomTable tableId="table01" title="1"/>
-
-     <div  class="col-md-2">Table 1
-      <draggable element="span" v-model="table1" :options="dragOptions" :move="onMove">
-          <transition-group name="no" class="list-group" tag="ul">
-            <li class="list-group-item" v-for="element in table1" :key="element.order">
-              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-              {{element.name}}
-              <span class="badge">{{element.order}}</span>
-            </li>
-          </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 2
-      <draggable element="span" v-model="table2" :options="dragOptions" :move="onMove">
-          <transition-group name="no" class="list-group" tag="ul">
-            <li class="list-group-item" v-for="element in table2" :key="element.order">
-              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-              {{element.name}}
-              <span class="badge">{{element.order}}</span>
-            </li>
-          </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 3
-      <draggable element="span" v-model="table3" :options="dragOptions" :move="onMove">
-          <transition-group name="no" class="list-group" tag="ul">
-            <li class="list-group-item" v-for="element in table3" :key="element.order">
-              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-              {{element.name}}
-              <span class="badge">{{element.order}}</span>
-            </li>
-          </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 4
-      <draggable element="span" v-model="table4" :options="dragOptions" :move="onMove">
-          <transition-group name="no" class="list-group" tag="ul">
-            <li class="list-group-item" v-for="element in table4" :key="element.order">
-              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-              {{element.name}}
-              <span class="badge">{{element.order}}</span>
-            </li>
-          </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 5
-      <draggable element="span" v-model="table5" :options="dragOptions" :move="onMove">
-          <transition-group name="no" class="list-group" tag="ul">
-            <li class="list-group-item" v-for="element in table5" :key="element.order">
-              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-              {{element.name}}
-              <span class="badge">{{element.order}}</span>
-            </li>
-          </transition-group>
-      </draggable>
-    </div>
-
-        <div  class="col-md-2">Table 6
-      <draggable element="span" v-model="table6" :options="dragOptions" :move="onMove">
-          <transition-group name="no" class="list-group" tag="ul">
-            <li class="list-group-item" v-for="element in table6" :key="element.order">
-              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-              {{element.name}}
-              <span class="badge">{{element.order}}</span>
-            </li>
-          </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 7
-      <draggable element="span" v-model="table7" :options="dragOptions" :move="onMove">
-          <transition-group name="no" class="list-group" tag="ul">
-            <li class="list-group-item" v-for="element in table7" :key="element.order">
-              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-              {{element.name}}
-              <span class="badge">{{element.order}}</span>
-            </li>
-          </transition-group>
-      </draggable>
-    </div>
-
-   <div  class="col-md-2">Table 8
-     <draggable element="span" v-model="table8" :options="dragOptions" :move="onMove">
-        <transition-group name="no" class="list-group" tag="ul">
-          <li class="list-group-item" v-for="element in table8" :key="element.order">
-            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-            {{element.name}}
-            <span class="badge">{{element.order}}</span>
-          </li>
-        </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 9
-     <draggable element="span" v-model="table9" :options="dragOptions" :move="onMove">
-        <transition-group name="no" class="list-group" tag="ul">
-          <li class="list-group-item" v-for="element in table9" :key="element.order">
-            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-            {{element.name}}
-            <span class="badge">{{element.order}}</span>
-          </li>
-        </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 10
-     <draggable element="span" v-model="table10" :options="dragOptions" :move="onMove">
-        <transition-group name="no" class="list-group" tag="ul">
-          <li class="list-group-item" v-for="element in table10" :key="element.order">
-            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-            {{element.name}}
-            <span class="badge">{{element.order}}</span>
-          </li>
-        </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 11
-     <draggable element="span" v-model="table11" :options="dragOptions" :move="onMove">
-        <transition-group name="no" class="list-group" tag="ul">
-          <li class="list-group-item" v-for="element in table11" :key="element.order">
-            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-            {{element.name}}
-            <span class="badge">{{element.order}}</span>
-          </li>
-        </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 12
-     <draggable element="span" v-model="table12" :options="dragOptions" :move="onMove">
-        <transition-group name="no" class="list-group" tag="ul">
-          <li class="list-group-item" v-for="element in table12" :key="element.order">
-            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-            {{element.name}}
-            <span class="badge">{{element.order}}</span>
-          </li>
-        </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 13
-     <draggable element="span" v-model="table13" :options="dragOptions" :move="onMove">
-        <transition-group name="no" class="list-group" tag="ul">
-          <li class="list-group-item" v-for="element in table13" :key="element.order">
-            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-            {{element.name}}
-            <span class="badge">{{element.order}}</span>
-          </li>
-        </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 14
-     <draggable element="span" v-model="table14" :options="dragOptions" :move="onMove">
-        <transition-group name="no" class="list-group" tag="ul">
-          <li class="list-group-item" v-for="element in table14" :key="element.order">
-            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-            {{element.name}}
-            <span class="badge">{{element.order}}</span>
-          </li>
-        </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 15
-     <draggable element="span" v-model="table15" :options="dragOptions" :move="onMove">
-        <transition-group name="no" class="list-group" tag="ul">
-          <li class="list-group-item" v-for="element in table15" :key="element.order">
-            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-            {{element.name}}
-            <span class="badge">{{element.order}}</span>
-          </li>
-        </transition-group>
-      </draggable>
-    </div>
-
-    <div  class="col-md-2">Table 16
-     <draggable element="span" v-model="table16" :options="dragOptions" :move="onMove">
-        <transition-group name="no" class="list-group" tag="ul">
-          <li class="list-group-item" v-for="element in table16" :key="element.order">
-            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-            {{element.name}}
-            <span class="badge">{{element.order}}</span>
-          </li>
-        </transition-group>
-      </draggable>
-    </div>
+    <Table tableId="table01" title="1"/>
+    <Table tableId="table02" title="2"/>
+    <Table tableId="table03" title="3"/>
+    <Table tableId="table04" title="4"/>
+    <Table tableId="table05" title="5"/>
+    <Table tableId="table06" title="6"/>
+    <Table tableId="table07" title="7"/>
+    <Table tableId="table08" title="8"/>
+    <Table tableId="table09" title="9"/>
+    <Table tableId="table10" title="10"/>
+    <Table tableId="table11" title="11"/>
+    <Table tableId="table12" title="12"/>
+    <Table tableId="table13" title="13"/>
+    <Table tableId="table14" title="14"/>
+    <Table tableId="table15" title="15"/>
+    <Table tableId="table16" title="16"/>
 
     <!-- <div  class="list-group col-md-2">
       <pre>{{listString}}</pre>
@@ -227,7 +50,7 @@
 
 <script>
 import draggable from 'vuedraggable'
-import CustomTable from './Table'
+import Table from './Table'
 import { EventBus } from './event-bus.js'
 
 import guests from '../../data/guests.json'
@@ -240,7 +63,7 @@ export default {
   name: 'tables',
   components: {
     draggable,
-    CustomTable
+    Table
   },
   data() {
     return {
@@ -351,13 +174,7 @@ export default {
         disabled: !this.editable,
         ghostClass: 'ghost'
       };
-    },
-    // listString(){
-    //   return JSON.stringify(this.list, null, 2);
-    // },
-    // list2String(){
-    //   return JSON.stringify(this.list2, null, 2);
-    // }
+    }
   },
   watch: {
     isDragging (newValue) {
