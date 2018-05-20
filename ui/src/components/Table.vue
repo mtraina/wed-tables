@@ -3,8 +3,7 @@
     <draggable element="span" v-model="elems" :options="dragOptions" :move="onMove"> 
         <transition-group name="no" class="list-group" tag="ul">
           <li class="list-group-item" v-for="element in elems" :key="element.order"> 
-            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-            {{element.name}}
+              <i :class="element.kid ? 'guest-kid' : 'guest-adult'">{{element.name}}</i>
             <span class="badge">{{element.order}}</span>
           </li> 
         </transition-group>

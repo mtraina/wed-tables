@@ -15,8 +15,8 @@
         <draggable class="list-group" element="ul" v-model="guestList" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false">
           <transition-group type="transition" :name="'flip-list'">
             <li class="list-group-item" v-for="element in guestList" :key="element.order">
-              <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
-              {{element.name}}
+              <!-- <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i> -->
+              <i :class="element.kid ? 'guest-kid' : 'guest-adult'">{{element.name}}</i>
               <span class="badge">{{element.order}}</span>
             </li>
           </transition-group>
@@ -74,7 +74,7 @@ export default {
       if(localStorage.getItem('guestList')){
         this.guestList = JSON.parse(localStorage.getItem("guestList"))
       } else {
-        this.guestList = guests.filter(e => e.presence).map((e, index) => { return {name:e.name, order: index+1, fixed: false} });
+        this.guestList = guests.filter(e => e.presence).map((e, index) => { return {name:e.name, order: index+1, kid: e.kid ? 'k' : ''} });
       }
     },
   methods:{
@@ -84,7 +84,8 @@ export default {
     onMove ({relatedContext, draggedContext}) {
       const relatedElement = relatedContext.element;
       const draggedElement = draggedContext.element;
-      return (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
+      //return (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
+      return !relatedElement
     },
     save() {
       console.log('This is before the write call');
@@ -138,5 +139,11 @@ export default {
 }
 .list-group-item i{
   cursor: pointer;
+}
+.guest-kid {
+  font-style: italic
+}
+.guest-adult {
+  font-style: normal
 }
 </style>
