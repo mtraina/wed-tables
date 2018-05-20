@@ -2,15 +2,16 @@
   <div class="fluid container">
     <div class="form-group form-group-lg panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Wedding tables</h3>
-        <div class = "checkbox">
+        <h3 class="panel-title"><b>Wedding tables</b></h3>
+        <!-- <div class = "checkbox">
           <label><input type = "checkbox" v-model="editable">Enable drag and drop</label>
-        </div>
+        </div> -->
+        <br>
         <button v-on:click="save()">Save</button>
       </div>
     </div>
 
-    <div  class="col-md-2">
+    <div class="col-md-2">
         <draggable class="list-group" element="ul" v-model="guestList" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false">
           <transition-group type="transition" :name="'flip-list'">
             <li class="list-group-item" v-for="element in guestList" :key="element.order">
@@ -37,8 +38,8 @@
     <Table tableId="table13" title="13"/>
     <Table tableId="table14" title="14"/>
     <Table tableId="table15" title="15"/>
-    <Table tableId="table16" title="16"/>
-    
+    <!-- <Table tableId="table16" title="16"/> -->
+
   </div>
 </template>
 
@@ -51,7 +52,6 @@ import guests from '../../data/guests.json'
 //import fs from 'fs'
 const fs = require('fs')
 console.log(fs)
-//console.log(guests);
 
 export default {
   name: 'tables',

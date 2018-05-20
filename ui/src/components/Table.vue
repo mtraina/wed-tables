@@ -1,5 +1,5 @@
 <template>
-  <div  class="col-md-2">Table {{ title }}
+  <div class="col-md-2"><b>Table {{ title }}</b>
     <draggable element="span" v-model="elems" :options="dragOptions" :move="onMove"> 
         <transition-group name="no" class="list-group" tag="ul">
           <li class="list-group-item" v-for="element in elems" :key="element.order"> 
