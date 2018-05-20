@@ -41,7 +41,7 @@ export default {
     console.log(`title is: ${this.title}`)
 
     if(localStorage.getItem(this.tableId)){
-      this.elems = JSON.parse(localStorage.getItem(tableId))
+      this.elems = JSON.parse(localStorage.getItem(this.tableId))
     } else {
       this.elems = []
     }
