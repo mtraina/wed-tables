@@ -6,6 +6,7 @@
         <div class = "checkbox">
           <label><input type = "checkbox" v-model="editable">Enable drag and drop</label>
         </div>
+        <button v-on:click="save()">Save</button>
       </div>
     </div>
 
@@ -167,7 +168,7 @@
       </draggable>
     </div>
 
-        <div  class="col-md-2">Table 13
+    <div  class="col-md-2">Table 13
      <draggable element="span" v-model="table13" :options="dragOptions" :move="onMove">
         <transition-group name="no" class="list-group" tag="ul">
           <li class="list-group-item" v-for="element in table13" :key="element.order">
@@ -179,6 +180,41 @@
       </draggable>
     </div>
 
+    <div  class="col-md-2">Table 14
+     <draggable element="span" v-model="table14" :options="dragOptions" :move="onMove">
+        <transition-group name="no" class="list-group" tag="ul">
+          <li class="list-group-item" v-for="element in table14" :key="element.order">
+            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
+            {{element.name}}
+            <span class="badge">{{element.order}}</span>
+          </li>
+        </transition-group>
+      </draggable>
+    </div>
+
+    <div  class="col-md-2">Table 15
+     <draggable element="span" v-model="table15" :options="dragOptions" :move="onMove">
+        <transition-group name="no" class="list-group" tag="ul">
+          <li class="list-group-item" v-for="element in table15" :key="element.order">
+            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
+            {{element.name}}
+            <span class="badge">{{element.order}}</span>
+          </li>
+        </transition-group>
+      </draggable>
+    </div>
+
+    <div  class="col-md-2">Table 16
+     <draggable element="span" v-model="table16" :options="dragOptions" :move="onMove">
+        <transition-group name="no" class="list-group" tag="ul">
+          <li class="list-group-item" v-for="element in table16" :key="element.order">
+            <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
+            {{element.name}}
+            <span class="badge">{{element.order}}</span>
+          </li>
+        </transition-group>
+      </draggable>
+    </div>
 
     <!-- <div  class="list-group col-md-2">
       <pre>{{listString}}</pre>
@@ -194,6 +230,9 @@ import draggable from 'vuedraggable'
 //import Table from './Table'
 
 import guests from '../../data/guests.json'
+//import fs from 'fs'
+const fs = require('fs')
+console.log(fs)
 //console.log(guests);
 
 export default {
@@ -217,6 +256,9 @@ export default {
       table11:[],
       table12:[],
       table13:[],
+      table14:[],
+      table15:[],
+      table16:[],
 
       editable:true,
       isDragging: false,
@@ -225,12 +267,43 @@ export default {
   },
   methods:{
     orderList () {
-      this.list = this.list.sort((one,two) =>{return one.order-two.order; })
+      this.list = this.list.sort((one,two) => { return one.order-two.order; })
     },
     onMove ({relatedContext, draggedContext}) {
       const relatedElement = relatedContext.element;
       const draggedElement = draggedContext.element;
       return (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
+    },
+    save() {
+      // let data = JSON.stringify(table, null, 2);
+      // console.log(data)
+
+      // fs.writeFile('../../data/table-1.json', data, (err) => {
+      //   if (err) throw err;
+      //     console.log('Data written to file');
+      // });
+
+      console.log('This is before the write call');
+
+      localStorage.setItem("guests", JSON.stringify(this.guests));
+      localStorage.setItem("table1", JSON.stringify(this.table1));
+      localStorage.setItem("table2", JSON.stringify(this.table2));
+      localStorage.setItem("table3", JSON.stringify(this.table3));
+      localStorage.setItem("table4", JSON.stringify(this.table4));
+      localStorage.setItem("table5", JSON.stringify(this.table5));
+      localStorage.setItem("table6", JSON.stringify(this.table6));
+      localStorage.setItem("table7", JSON.stringify(this.table7));
+      localStorage.setItem("table8", JSON.stringify(this.table8));
+      localStorage.setItem("table9", JSON.stringify(this.table9));
+      localStorage.setItem("table10", JSON.stringify(this.table10));
+      localStorage.setItem("table11", JSON.stringify(this.table11));
+      localStorage.setItem("table12", JSON.stringify(this.table12));
+      localStorage.setItem("table13", JSON.stringify(this.table13));
+      localStorage.setItem("table14", JSON.stringify(this.table14));
+      localStorage.setItem("table15", JSON.stringify(this.table15));
+      localStorage.setItem("table16", JSON.stringify(this.table16));
+
+      console.log('This is after the write call');
     }
   },
   computed: {
