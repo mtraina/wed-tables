@@ -22,7 +22,7 @@
       </draggable>
     </div>
 
-    <!-- <table/> -->
+    <CustomTable tableId="table01" title="1"/>
 
      <div  class="col-md-2">Table 1
       <draggable element="span" v-model="table1" :options="dragOptions" :move="onMove">
@@ -227,7 +227,8 @@
 
 <script>
 import draggable from 'vuedraggable'
-//import Table from './Table'
+import CustomTable from './Table'
+import { EventBus } from './event-bus.js'
 
 import guests from '../../data/guests.json'
 //import fs from 'fs'
@@ -239,6 +240,7 @@ export default {
   name: 'tables',
   components: {
     draggable,
+    CustomTable
   },
   data() {
     return {
@@ -336,6 +338,8 @@ export default {
       localStorage.setItem("table15", JSON.stringify(this.table15));
       localStorage.setItem("table16", JSON.stringify(this.table16));
 
+      EventBus.$emit('save');
+
       console.log('This is after the write call');
     }
   },
@@ -348,12 +352,12 @@ export default {
         ghostClass: 'ghost'
       };
     },
-    listString(){
-      return JSON.stringify(this.list, null, 2);
-    },
-    list2String(){
-      return JSON.stringify(this.list2, null, 2);
-    }
+    // listString(){
+    //   return JSON.stringify(this.list, null, 2);
+    // },
+    // list2String(){
+    //   return JSON.stringify(this.list2, null, 2);
+    // }
   },
   watch: {
     isDragging (newValue) {
