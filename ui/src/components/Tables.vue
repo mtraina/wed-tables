@@ -11,9 +11,9 @@
     </div>
 
     <div  class="col-md-2">
-        <draggable class="list-group" element="ul" v-model="list" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false">
+        <draggable class="list-group" element="ul" v-model="guestList" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false">
           <transition-group type="transition" :name="'flip-list'">
-            <li class="list-group-item" v-for="element in list" :key="element.order">
+            <li class="list-group-item" v-for="element in guestList" :key="element.order">
               <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
               {{element.name}}
               <span class="badge">{{element.order}}</span>
@@ -240,9 +240,9 @@ export default {
   components: {
     draggable,
   },
-  data () {
+  data() {
     return {
-      list: guests.filter(e => e.presence).map((e, index) => { return {name:e.name, order: index+1, fixed: false} }),
+      guestList:[],
       table1:[],
       table2:[],
       table3:[],
@@ -265,6 +265,47 @@ export default {
       delayedDragging:false
     }
   },
+  mounted() {
+      console.log('App mounted!');
+
+      if(localStorage.getItem('guestList')){
+        this.guestList = JSON.parse(localStorage.getItem("guestList"));
+        this.table1 = JSON.parse(localStorage.getItem("table1"));
+        this.table2 = JSON.parse(localStorage.getItem("table2"));
+        this.table3 = JSON.parse(localStorage.getItem("table3"));
+        this.table4 = JSON.parse(localStorage.getItem("table4"));
+        this.table5 = JSON.parse(localStorage.getItem("table5"));
+        this.table6 = JSON.parse(localStorage.getItem("table6"));
+        this.table7 = JSON.parse(localStorage.getItem("table7"));
+        this.table8 = JSON.parse(localStorage.getItem("table8"));
+        this.table9 = JSON.parse(localStorage.getItem("table9"));
+        this.table10 = JSON.parse(localStorage.getItem("table10"));
+        this.table11 = JSON.parse(localStorage.getItem("table11"));
+        this.table12 = JSON.parse(localStorage.getItem("table12"));
+        this.table13 = JSON.parse(localStorage.getItem("table13"));
+        this.table14 = JSON.parse(localStorage.getItem("table14"));
+        this.table15 = JSON.parse(localStorage.getItem("table15"));
+        this.table16 = JSON.parse(localStorage.getItem("table16"));
+      } else {
+        this.guestList = guests.filter(e => e.presence).map((e, index) => { return {name:e.name, order: index+1, fixed: false} });
+        this.table1 = []
+        this.table2 = []
+        this.table3 = []
+        this.table4 = []
+        this.table5 = []
+        this.table6 = []
+        this.table7 = []
+        this.table8 = []
+        this.table9 = []
+        this.table10 = []
+        this.table11 = []
+        this.table12 = []
+        this.table13 = []
+        this.table14 = []
+        this.table15 = []
+        this.table16 = []
+      }
+    },
   methods:{
     orderList () {
       this.list = this.list.sort((one,two) => { return one.order-two.order; })
@@ -275,17 +316,9 @@ export default {
       return (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
     },
     save() {
-      // let data = JSON.stringify(table, null, 2);
-      // console.log(data)
-
-      // fs.writeFile('../../data/table-1.json', data, (err) => {
-      //   if (err) throw err;
-      //     console.log('Data written to file');
-      // });
-
       console.log('This is before the write call');
 
-      localStorage.setItem("guests", JSON.stringify(this.guests));
+      localStorage.setItem("guestList", JSON.stringify(this.guestList));
       localStorage.setItem("table1", JSON.stringify(this.table1));
       localStorage.setItem("table2", JSON.stringify(this.table2));
       localStorage.setItem("table3", JSON.stringify(this.table3));
